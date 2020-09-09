@@ -34,8 +34,8 @@ public class EntryService {
         throw new EntryNotFoundException();
     }
 
-    public List<Entry> findAll() {
-        return entryRepository.findAll();
+    public List<Entry> findAll(Principal principal) {
+        return entryRepository.findAllFromUser(sessionService.getUserByUsername(principal.getName()));
     }
 
     public void deleteEntry(Long id) {

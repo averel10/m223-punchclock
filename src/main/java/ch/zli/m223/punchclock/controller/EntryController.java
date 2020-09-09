@@ -22,8 +22,8 @@ public class EntryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Entry> getAllEntries() {
-        return entryService.findAll();
+    public List<Entry> getAllEntries(Principal principal) {
+        return entryService.findAll(principal);
     }
 
     @PostMapping
