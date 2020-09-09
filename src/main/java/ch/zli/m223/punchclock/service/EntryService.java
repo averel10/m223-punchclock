@@ -24,6 +24,10 @@ public class EntryService {
 
     public Entry createEntry(Entry entry, Principal principal) {
         entry.setUser(sessionService.getUserByUsername(principal.getName()));
+        return createEntry(entry);
+    }
+
+    public Entry createEntry(Entry entry){
         return entryRepository.saveAndFlush(entry);
     }
 
