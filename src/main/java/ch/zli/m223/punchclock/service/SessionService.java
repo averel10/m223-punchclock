@@ -19,4 +19,8 @@ public class SessionService {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         return userRepository.saveAndFlush(user);
     }
+
+    public User findUserById(long id) {
+        return userRepository.findById(id).get();
+    }
 }

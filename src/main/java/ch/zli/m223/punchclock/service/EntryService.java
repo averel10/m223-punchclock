@@ -1,9 +1,11 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Entry;
+import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.exceptions.EntryNotFoundException;
 import ch.zli.m223.punchclock.repository.EntryRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +14,11 @@ import java.util.List;
 public class EntryService {
     private EntryRepository entryRepository;
 
-    public EntryService(EntryRepository entryRepository) {
+    private SessionService sessionService;
+
+    public EntryService(EntryRepository entryRepository, SessionService sessionService) {
         this.entryRepository = entryRepository;
+        this.sessionService = sessionService;
     }
 
     public Entry createEntry(Entry entry) {
