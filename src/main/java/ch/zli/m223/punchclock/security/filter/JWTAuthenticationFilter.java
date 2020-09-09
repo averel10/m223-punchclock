@@ -1,4 +1,4 @@
-package ch.zli.m223.punchclock.filter;
+package ch.zli.m223.punchclock.security.filter;
 
 import ch.zli.m223.punchclock.domain.User;
 import com.auth0.jwt.JWT;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static ch.zli.m223.punchclock.config.SecurityConstants.*;
+import static ch.zli.m223.punchclock.security.SecurityConstants.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
