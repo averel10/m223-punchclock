@@ -20,7 +20,7 @@ public class SessionService {
         return userRepository.saveAndFlush(user);
     }
 
-    public User findUserById(long id) {
-        return userRepository.findById(id).get();
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 
 @Service
@@ -21,7 +22,8 @@ public class EntryService {
         this.sessionService = sessionService;
     }
 
-    public Entry createEntry(Entry entry) {
+    public Entry createEntry(Entry entry, Principal principal) {
+        entry.setUser(sessionService.getUserByUsername(principal.getName()));
         return entryRepository.saveAndFlush(entry);
     }
 

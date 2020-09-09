@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -27,8 +28,8 @@ public class EntryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Entry createEntry(@Valid @RequestBody Entry entry) {
-        return entryService.createEntry(entry);
+    public Entry createEntry(@Valid @RequestBody Entry entry, Principal principal) {
+        return entryService.createEntry(entry, principal);
     }
 
     @PutMapping
