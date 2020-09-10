@@ -6,4 +6,4 @@ INSERT into category (name) VALUES ('Testkategorie2');
 
 INSERT into department (id, name, location) VALUES (1, 'Testdepartment', 'Testlocation');
 
-INSERT into entry (CHECK_OUT, CHECK_IN, USER_ID, CATEGORY_ID, DEPARTMENT_ID) VALUES ('2020-09-23T10:29:00', '2020-09-24T10:29:00', 1, 1, 1);
+INSERT into entry (CHECK_IN, CHECK_OUT, USER_ID, CATEGORY_ID, DEPARTMENT_ID) VALUES ('2020-09-23T10:29:00', '2020-09-24T10:29:00', 1, 1, 1);
