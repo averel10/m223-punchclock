@@ -1,5 +1,5 @@
-INSERT into user (id, username, password) VALUES (1, 'test','test');
-INSERT into user (username, password) VALUES ('test2','test2');
+INSERT into user (id, username, password) VALUES (1, 'test','$2a$10$V/28B6zZL1uX/22PtGrTOeun2BaQ86WMtoEUEDgAkW2A9.YaqxI5G');/*pw:test*/
+INSERT into user (username, password) VALUES ('test2','$2a$10$eSKaHPEw1C3LiFK9nTktNe77cKTM0/6y67D6jFUFFglAGMZrZbIxC');/*pw:test2*/
 
 INSERT into category (id, name) VALUES (1, 'Testkategorie');
 INSERT into category (name) VALUES ('Testkategorie2');

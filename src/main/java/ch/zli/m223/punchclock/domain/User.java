@@ -1,6 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
 import com.fasterxml.jackson.annotation.*;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class User {
     @NotNull
     private String password;
     @JsonIgnore
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @OneToMany(mappedBy = "user")
     private List<Entry> entries;
 
