@@ -31,7 +31,8 @@ public class EntryService {
         return entryRepository.saveAndFlush(entry);
     }
 
-    public Entry updateEntry(Entry entry) {
+    public Entry updateEntry(Entry entry, Principal principal) {
+        entry.setUser(sessionService.getUserByUsername(principal.getName()));
         if(entryRepository.findById(entry.getId()).isPresent()) {
             return entryRepository.saveAndFlush(entry);
         }

@@ -34,8 +34,8 @@ public class EntryController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public Entry updateEntry(@Valid @RequestBody Entry entry) {
-        return entryService.updateEntry(entry);
+    public Entry updateEntry(@Valid @RequestBody Entry entry, Principal principal) {
+        return entryService.updateEntry(entry, principal);
     }
 
     @DeleteMapping(path = "{id}")
